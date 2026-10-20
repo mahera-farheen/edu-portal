@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning Hub – Education Resource & Performance Portal</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!-- Sign in / register -->
+  <main id="auth" class="auth" hidden>
+    <section class="auth-intro">
+      <h1>Learning Hub</h1>
+      <p>One place for course materials and student results. Teachers share resources and record grades; students find what they need and see how they are doing.</p>
+      <div class="demo">
+        <strong>Demo accounts</strong>
+        <span>admin@edu.com / admin123</span>
+        <span>teacher@edu.com / teacher123</span>
+        <span>student@edu.com / student123</span>
+      </div>
+    </section>
+    <section class="auth-card">
+      <div class="tabs">
+        <button type="button" class="tab active" data-action="authTab" data-tab="login">Sign in</button>
+        <button type="button" class="tab" data-action="authTab" data-tab="register">Create student account</button>
+      </div>
+      <form data-form="login" id="login-form">
+        <label>Email <input name="email" type="email" required autocomplete="username"></label>
+        <label>Password <input name="password" type="password" required autocomplete="current-password"></label>
+        <button class="btn primary" type="submit">Sign in</button>
+      </form>
+      <form data-form="register" id="register-form" hidden>
+        <label>Full name <input name="name" required></label>
+        <label>Email <input name="email" type="email" required></label>
+        <label>Password <input name="password" type="password" minlength="6" required></label>
+        <button class="btn primary" type="submit">Create account</button>
+      </form>
+      <p id="auth-error" class="error" role="alert"></p>
+    </section>
+  </main>
+
+  <!-- App shell -->
+  <div id="app" class="shell" hidden>
+    <aside class="side">
+      <div class="brand">Learning Hub</div>
+      <nav id="nav"></nav>
+      <div class="who">
+        <div id="who-name"></div>
+        <div id="who-role" class="muted"></div>
+        <button class="btn ghost" data-action="logout">Sign out</button>
+      </div>
+    </aside>
+    <main class="main">
+      <div id="view" aria-live="polite"></div>
+    </main>
+  </div>
+  <div id="toast" role="status"></div>
+  <script src="/js/app.js"></script>
+</body>
+</html>
